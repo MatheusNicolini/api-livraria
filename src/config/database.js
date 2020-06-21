@@ -9,5 +9,6 @@ module.exports = {
     timestamp: true,
     underscored: true,
     underscoredAll: true
-  }
+  },
+  timezone: '-03:00'
 };
