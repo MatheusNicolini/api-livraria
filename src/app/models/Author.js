@@ -7,8 +7,8 @@ class Author extends Model {
         name: Sequelize.STRING,
         first_name: Sequelize.STRING,
         family_name: Sequelize.STRING,
-        date_of_birth: Sequelize.DATE,
-        date_of_death: Sequelize.DATE,
+        date_of_birth: Sequelize.DATEONLY,
+        date_of_death: Sequelize.DATEONLY,
         lifespan: Sequelize.STRING,
         url: Sequelize.STRING
       },
