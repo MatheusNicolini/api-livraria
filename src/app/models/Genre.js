@@ -5,11 +5,10 @@ class Genre extends Model {
     super.init(
       {
         name: Sequelize.STRING,
-        url: Sequelize.STRING,
+        url: Sequelize.STRING
       },
       {
         sequelize,
-        tableName: 'genres'
       }
     );
 

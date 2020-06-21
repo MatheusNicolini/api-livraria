@@ -2,7 +2,7 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('genres', {
+    return queryInterface.createTable('authors', {
       id: {
         type: Sequelize.INTEGER,
         allowNull: false,
@@ -12,6 +12,26 @@ module.exports = {
       name: {
         type: Sequelize.STRING,
         allowNull: false
+      },
+      first_name: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      family_name: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      date_of_birth: {
+        type: Sequelize.DATE,
+        allowNull: false,
+      },
+      date_of_death: {
+        type: Sequelize.DATE,
+        allowNull: false,
+      },
+      lifespan: {
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       url: {
         type: Sequelize.STRING,
@@ -29,6 +49,6 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('genres');
+    return queryInterface.dropTable('authors');
   }
 };
