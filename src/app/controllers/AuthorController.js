@@ -5,9 +5,8 @@ class AuthorController {
   async store(req, res) {
     const { name, first_name, family_name, date_of_birth, date_of_death, lifespan, url } = req.body;
 
-    if(!validDate(date_of_birth) || !validDate(date_of_death)){
+    if(!validDate(date_of_birth) || !validDate(date_of_death))
       return res.status(400).json({ message: 'O formato aceito: dd/mm/yyyy'});
-    }
     
     const response = await Author.create({
       name,
@@ -41,9 +40,8 @@ class AuthorController {
     const { name, first_name, family_name, date_of_birth, date_of_death, lifespan, url } = req.body;
 
     if(date_of_birth && date_of_death) {
-      if(!validDate(date_of_birth) || !validDate(date_of_death)){
+      if(!validDate(date_of_birth) || !validDate(date_of_death))
         return res.status(400).json({ message: 'O formato aceito: dd/mm/yyyy'});
-      }
     }
 
     const author = await Author.findByPk(id);

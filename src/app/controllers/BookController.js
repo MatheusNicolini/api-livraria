@@ -46,7 +46,7 @@ class BookController {
       id_genre
     });
 
-    return res.status(200).json({ message: 'Autor atualizado com sucesso!', book: response, success: true });
+    return res.status(200).json({ message: 'Livro atualizado com sucesso!', book: response, success: true });
   }
 
   async destroy(req, res) {

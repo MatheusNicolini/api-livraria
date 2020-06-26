@@ -2,39 +2,33 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('books', {
+    return queryInterface.createTable('books_instances', {
       id: {
         type: Sequelize.INTEGER,
         allowNull: false,
         autoIncrement: true,
         primaryKey: true
       },
-      title: {
+      imprint: {
         type: Sequelize.STRING,
         allowNull: false
       },
-      summary: {
-        type: Sequelize.STRING,
+      status: {
+        type: Sequelize.ENUM,
+        values: ['disponivel', 'alugado', 'vendido'],
         allowNull: false
       },
-      isbn: {
-        type: Sequelize.STRING,
-        allowNull: false
+      due_back: {
+        type: Sequelize.DATEONLY,
+        allowNull: false,
       },
       url: {
         type: Sequelize.STRING,
         allowNull: true
       },
-      id_author: {
+      id_book: {
         type: Sequelize.INTEGER,
-        references: { model: 'authors', key: 'id' },
-        onUpdate: 'CASCADE',
-        onDelete: 'SET NULL',
-        allowNull: true
-      },
-      id_genre: {
-        type: Sequelize.INTEGER,
-        references: { model: 'genres', key: 'id' },
+        references: { model: 'books', key: 'id' },
         onUpdate: 'CASCADE',
         onDelete: 'SET NULL',
         allowNull: true
@@ -51,6 +45,6 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('books');
+    return queryInterface.dropTable('books_instances');
   }
 };
