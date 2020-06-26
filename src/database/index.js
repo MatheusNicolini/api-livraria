@@ -2,10 +2,11 @@ import Sequelize from 'sequelize';
 
 import Genre from '../app/models/Genre';
 import Author from '../app/models/Author';
+import Book from '../app/models/Book';
 
 import databaseConfig from '../config/database';
 
-const models = [Genre, Author];
+const models = [Genre, Author, Book];
 
 class Database {
   constructor() {

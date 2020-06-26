@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import GenreController from './app/controllers/GenreController';
 import AuthorController from './app/controllers/AuthorController';
-// import BookController from './app/controllers/BookController';
+import BookController from './app/controllers/BookController';
 
 const routes = new Router();
 
@@ -17,9 +17,10 @@ routes.get('/authors/:id', AuthorController.show); // Listar um único Autor
 routes.put('/authors/:id', AuthorController.update); // Atualizar Autor
 routes.delete('/authors/:id', AuthorController.destroy); // Apagar Autor
 
-// routes.get('/books', BookController.index); // Listar Livros
-// routes.post('/books', BookController.store);  // Cadastrar Livro
-// routes.put('/books/:id', BookController.update); // Atualizar Livro
-// routes.delete('/books/:id', BookController.destroy); // Apagar Livro
+routes.get('/books', BookController.index); // Listar Livros
+routes.post('/books', BookController.store);  // Cadastrar Livro
+// routes.get('/books/:id', BookController.show); // Listar um único Livro
+routes.put('/books/:id', BookController.update); // Atualizar Livro
+routes.delete('/books/:id', BookController.destroy); // Apagar Livro
 
 export default routes;
