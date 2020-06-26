@@ -18,6 +18,10 @@ class BookInstance extends Model {
 
     return this;
   }
+
+  static associate(models) {
+    this.belongsTo(models.Book, { foreignKey: 'id_book', as: 'book' });
+  }
 }
 
 export default BookInstance;
